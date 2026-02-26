@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- 서비스 상태 -->
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="16dp"
+            android:text="확인 중..."
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="32dp" />
+
+        <!-- 1단계: 알림 접근 권한 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1단계 — 알림 접근 권한"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="⚠️ 처음 설치 시: 앱 아이콘 길게 누름 → 앱 정보 → ⋮(점 3개) → 제한된 설정 허용\n\n그 다음 아래 버튼으로 설정 화면을 열어 notify-relay를 활성화하세요."
+            android:layout_marginBottom="12dp" />
+
+        <Button
+            android:id="@+id/btn_permission"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="알림 접근 권한 설정으로 이동"
+            android:layout_marginBottom="32dp" />
+
+        <!-- 2단계: 텔레그램 설정 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2단계 — 텔레그램 설정"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/et_bot_token"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="봇 토큰 (BotFather에서 발급)"
+            android:inputType="textNoSuggestions"
+            android:maxLines="1"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/et_chat_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="채팅 ID (예: -100123456789)"
+            android:inputType="textNoSuggestions"
+            android:maxLines="1"
+            android:layout_marginBottom="12dp" />
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="저장" />
+
+    </LinearLayout>
+</ScrollView>
