@@ -61,6 +61,14 @@
             android:maxLines="1"
             android:layout_marginBottom="8dp" />
 
+        <Button
+            android:id="@+id/btn_find_chat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="채팅방 찾기"
+            android:layout_marginBottom="8dp" />
+
         <EditText
             android:id="@+id/et_chat_id"
             android:layout_width="match_parent"
@@ -75,6 +83,60 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="저장" />
+
+        <!-- 구분선 -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#22000000"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp" />
+
+        <!-- 3단계: 발신자 관리 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3단계 — 발신자 관리"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="알림을 전달할 발신자명(또는 번호 앞자리)을 등록하세요."
+            android:layout_marginBottom="12dp" />
+
+        <LinearLayout
+            android:id="@+id/ll_senders_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <EditText
+                android:id="@+id/et_new_sender"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="발신자명 추가"
+                android:inputType="text"
+                android:maxLines="1"
+                android:layout_marginEnd="8dp" />
+
+            <Button
+                android:id="@+id/btn_add_sender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="추가" />
+
+        </LinearLayout>
 
     </LinearLayout>
 </ScrollView>

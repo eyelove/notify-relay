@@ -25,19 +25,17 @@ class ConfigManager private constructor(context: Context) {
         "com.google.android.apps.messaging", // Google 메시지
     )
 
-    // 허용할 발신자명 — 개발 4단계에서 실제 알림 구조 확인 후 조정
-    // 연락처 미등록 시 전화번호로 표시될 수 있으므로 번호 추가 가능
-    val allowedSenders: Set<String> = setOf(
-        "삼성카드",
-        "신한카드",
-        "현대카드",
-        "하나카드",
-    )
+    // 허용할 발신자명 — 앱에서 사용자가 추가/삭제 가능
+    var allowedSenders: Set<String>
+        get() = prefs.getStringSet(KEY_ALLOWED_SENDERS, null)?.toSet() ?: DEFAULT_SENDERS
+        set(value) { prefs.edit().putStringSet(KEY_ALLOWED_SENDERS, HashSet(value)).apply() }
 
     companion object {
         private const val PREFS_NAME = "notify_relay_config"
         private const val KEY_BOT_TOKEN = "bot_token"
         private const val KEY_CHAT_ID = "chat_id"
+        private const val KEY_ALLOWED_SENDERS = "allowed_senders"
+        private val DEFAULT_SENDERS = setOf("삼성카드", "신한카드", "현대카드", "하나카드")
 
         @Volatile
         private var instance: ConfigManager? = null
